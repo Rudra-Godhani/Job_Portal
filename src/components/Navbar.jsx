@@ -10,9 +10,9 @@ const Navbar = () => {
   return (
     <>
       <nav className={show ? "navbar show_navbar" : "navbar"}>
-        <div className="logo">
+        <Link className="logo" to={"/"}>
           <img src="/logo.png" alt="logo" />
-        </div>
+        </Link>
         <div className='links'>
           <ul>
             <li>
