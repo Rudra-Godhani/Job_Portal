@@ -212,7 +212,7 @@ const Register = () => {
                 </>
               )
             }
-            <button type='submit' disabled={loading}>Register</button>
+            <button type='submit'>Register</button>
             <Link to="/login">Login Now</Link>
           </form>
         </div>

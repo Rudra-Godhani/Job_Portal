@@ -84,7 +84,7 @@ const applicationSlice = createSlice({
 export const fetchEmployerApplications = () => async (dispatch) => {
     dispatch(applicationSlice.actions.requestForAllAppllications());
     try {
-        const response = await axios.get(`http://localhost:4000/api/v1/application/employer/getall`, {
+        const response = await axios.get(`https://job-portal-backend-1tx9.onrender.com/api/v1/application/employer/getall`, {
             withCredentials: true,
         });
         dispatch(applicationSlice.actions.successForAllApplications(response.data.applications));
@@ -98,7 +98,7 @@ export const fetchEmployerApplications = () => async (dispatch) => {
 export const fetchJobSeekerApplications = () => async (dispatch) => {
     dispatch(applicationSlice.actions.requestForMyAppllications());
     try {
-        const response = await axios.get(`http://localhost:4000/api/v1/application/jobseeker/getall`, {
+        const response = await axios.get(`https://job-portal-backend-1tx9.onrender.com/api/v1/application/jobseeker/getall`, {
             withCredentials: true,
         });
         dispatch(applicationSlice.actions.successForMyApplications(response.data.applications));
@@ -112,7 +112,7 @@ export const fetchJobSeekerApplications = () => async (dispatch) => {
 export const postApplication = (data, jobId) => async (dispatch) => {
     dispatch(applicationSlice.actions.requestForPostApplication());
     try {
-        const response = await axios.post(`http://localhost:4000/api/v1/application/post/${jobId}`, data, {
+        const response = await axios.post(`https://job-portal-backend-1tx9.onrender.com/api/v1/application/post/${jobId}`, data, {
             withCredentials: true,
             headers: { "Content-Type": "application/json" }
         });
@@ -127,7 +127,7 @@ export const postApplication = (data, jobId) => async (dispatch) => {
 export const deleteApplication = (id) => async (dispatch) => {
     dispatch(applicationSlice.actions.requestForDeleteApplication());
     try {
-        const response = await axios.delete(`http://localhost:4000/api/v1/application/delete/${id}`, { withCredentials: true });
+        const response = await axios.delete(`https://job-portal-backend-1tx9.onrender.com/api/v1/application/delete/${id}`, { withCredentials: true });
         dispatch(applicationSlice.actions.successForDeleteApplication(response.data.message));
         dispatch(clearAllApplicationErrors());
     } catch (error) {

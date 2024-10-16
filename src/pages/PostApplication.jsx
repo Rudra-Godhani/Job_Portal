@@ -30,17 +30,12 @@ const PostApplication = () => {
 
   const navigateTo = useNavigate();
   const dispatch = useDispatch();
-  
+
   const resumeHandler = (e) => {
     const file = e.target.files[0];
-    console.log("--------------",e.target.files);
-    console.log("++++++++++++",e.target.files[0]);
-    console.log(file);
-    
-    
     setResume(file);
   };
-  
+
   const handlePostApplication = (e) => {
     e.preventDefault();
     const formData = new FormData();
@@ -49,11 +44,9 @@ const PostApplication = () => {
     formData.append("phone", phone);
     formData.append("address", address);
     formData.append("coverLetter", coverLetter);
-    
     if (resume) {
-      console.log("================");
-      
       formData.append("resume", resume);
+
     }
     dispatch(postApplication(formData, jobId));
   };

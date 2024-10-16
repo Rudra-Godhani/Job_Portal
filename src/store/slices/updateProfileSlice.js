@@ -48,7 +48,7 @@ const updateProfileSlice = createSlice({
 export const updateProfile = (data) => async (dispatch) => {
     dispatch(updateProfileSlice.actions.updateProfileRequest());
     try {
-        const response = await axios.put("http://localhost:4000/api/v1/user/update/profile", data, {
+        const response = await axios.put("https://job-portal-backend-1tx9.onrender.com/api/v1/user/update/profile", data, {
             withCredentials: true,
             headers: {
                 "Content-Type": "multipart/form-data"
@@ -79,7 +79,7 @@ export const updatePassword = (data) => async (dispatch) => {
     dispatch(updateProfileSlice.actions.updatePasswordRequest());
     try {
       const response = await axios.put(
-        "http://localhost:4000/api/v1/user/update/password",
+        "https://job-portal-backend-1tx9.onrender.com/api/v1/user/update/password",
         data,
         {
           withCredentials: true,
