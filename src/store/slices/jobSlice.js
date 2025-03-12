@@ -153,7 +153,7 @@ export const postJob = (data) => async (dispatch) => {
     }
 };
 
-export const getMyJobs = (data) => async (dispatch) => {
+export const getMyJobs = () => async (dispatch) => {
     dispatch(jobSlice.actions.requestForMyJobs());
     try {
         const response = await axios.get(
